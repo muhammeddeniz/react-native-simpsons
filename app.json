@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "simpsonsMD",
+    "slug": "simpsonsMD",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "simpsonsMD"
+}
