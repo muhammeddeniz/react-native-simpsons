@@ -5,12 +5,16 @@ const useDiscover = () => {
   const { dataSlice } = useAppSelector((state) => state);
   const baseCondition: boolean | undefined =
     dataSlice.data && dataSlice.data?.length > 5;
-
-  const shuffled: Array<IData> | undefined | boolean =
-    dataSlice.data &&
-    baseCondition &&
-    dataSlice.data.sort(() => 0.5 - Math.random());
-
+  var shuffled: Array<IData> | undefined | boolean;
+  try {
+    shuffled =
+      dataSlice.data &&
+      baseCondition &&
+      dataSlice.data.sort(() => 0.5 - Math.random());
+  } catch (err) {
+    console.log(err);
+    return dataSlice.data;
+  }
   if (!shuffled || baseCondition) return dataSlice.data;
   return shuffled.slice(0, 5);
 };

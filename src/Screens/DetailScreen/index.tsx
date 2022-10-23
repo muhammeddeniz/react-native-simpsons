@@ -42,13 +42,18 @@ const DetailScreen: React.FC<Props> = ({ navigation, route }) => {
     </TouchableOpacity>
   );
 
+  console.log();
+
   return (
     <View style={styles.container}>
       <Header leftIcon={Icons.left} title={name} leftOnPress={goBack} />
       <SafeAreaView style={styles.container}>
         <ScrollView contentContainerStyle={styles.inner}>
           <View style={styles.content}>
-            <Image source={{ uri: avatar }} style={styles.avatar} />
+            <Image
+              source={{ uri: avatar.slice(0, -14) }}
+              style={styles.avatar}
+            />
             <Tag text={job} />
 
             <Text style={styles.title}>{name}</Text>
